@@ -1,0 +1,35 @@
+{
+  "name": "krpano",
+  "version": "0.0.1",
+  "description": "krpano nodejs wrap",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xxd3vin/krpano.git"
+  },
+  "keywords": [
+    "krpano"
+  ],
+  "author": "d3vin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xxd3vin/krpano/issues"
+  },
+  "homepage": "https://github.com/xxd3vin/krpano#readme",
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "request": "^2.74.0"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.12",
+    "istanbul": "^0.4.4",
+    "mocha": "^3.0.0",
+    "should": "^10.0.0"
+  }
+}
