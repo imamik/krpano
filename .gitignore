@@ -38,3 +38,6 @@ jspm_packages
 
 # VIM
 .*.swp
+
+# krpano output dir
+test/output
