@@ -1,13 +1,13 @@
 const should = require('should');
 
 const config = {
-  bin: '/home/chenyang/opt/krpano-1.19-pr5/krpanotools'
+  krpath: '/home/chenyang/opt/krpano-1.19-pr5'
 };
 
 var krpano = require('../').create(config);
 //var krpano2 = require('../').create(config);
 
-describe('test/krpano.test.js',function () {
+describe('krpano',function () {
   //describe('make from internet ',function () {
   //  it('should have result',function (done) {
   //    krpano.makepano({
@@ -18,13 +18,39 @@ describe('test/krpano.test.js',function () {
   //    });
   //  });
   //});
-  describe('make from local url', function () {
-    it('should return object',function (done) {
-      krpano.makepano({
-        url: __dirname+'/test.jpg'
-      }).then(function(result) {
-        result.should.be.an.instanceOf(Object);
-        done();
+  describe('#makepano()', function () {
+    context('when not given template name', function () {
+      it('should use default normal template and return object',function (done) {
+        krpano.makepano({
+          url: __dirname+'/test.jpg'
+        }).then(function(result) {
+          result.should.be.an.instanceOf(Object);
+          done();
+        });
+      });
+    });
+
+    context('when use normal template', function () {
+      it('should return object',function (done) {
+        krpano.makepano({
+          url: __dirname+'/test.jpg',
+          tpl: 'normal'
+        }).then(function(result) {
+          result.should.be.an.instanceOf(Object);
+          done();
+        });
+      });
+    });
+
+    context('when use flat template', function () {
+      it('should return object',function (done) {
+        krpano.makepano({
+          url: __dirname+'/test.jpg',
+          tpl: 'flat'
+        }).then(function(result) {
+          result.should.be.an.instanceOf(Object);
+          done();
+        });
       });
     });
   });
